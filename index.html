@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Library</title>
+</head>
+<body>
+	<div class="container">
+		<table id="table">
+			<tr id="test">
+				<th>Title</th>
+				<th>Author</th>
+				<th>Pages</th>
+				<th>Read</th>
+				<th>Delete</th>
+			</tr>
+		</table>
+		<button class="new" onclick="popup()">New</button>
+	</div>
+	<div class="popup-form">
+		<div class="form-container">
+			<form onsubmit="addBookToLibrary();return false" id="book-form">
+				<h1>Add New Book</h1>
+				<div class="close" onclick="popup()">&times;</div>
+				<label for="title"><b>Title</b></label>
+				<input type="text" placeholder="Title" id="title" required="true">
+				<label for="author">Author</label>
+				<input type="text" placeholder="Author" id="author" required>
+				<label for="pages">Pages</label>
+				<input type="text" placeholder="Pages" id="pages" required>
+				<label for="read">Read</label>
+				<input type="checkbox" name="Read" id="read">
+				<input type="submit" value="Submit" id="create">
+			</form>
+		</div>
+	</div>
+</body>
+<script src="script.js"></script>
+</html>
