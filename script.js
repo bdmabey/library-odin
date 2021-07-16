@@ -21,9 +21,15 @@ function Book(title, author, pages, read, id)  {
 		let readInput = document.createElement("input");
 
 		tr.id = `${this.id}`;	
+
 		removeButton.textContent = "Delete";
 		removeButton.onclick = () => this.removeBook();
+
+		readInput.addEventListener("click", () => {
+			this.updateRead();
+		})
 		readInput.type = "checkbox";
+		readInput.id = `${this.id}-read`;
 
 		title.textContent = this.title;
 		author.textContent = this.author;
@@ -41,6 +47,11 @@ function Book(title, author, pages, read, id)  {
 		book.remove();
 		myLibrary.splice(this.id, 1);
 	}
+}
+
+Book.prototype.updateRead = function () {
+	let read = document.getElementById(`${this.id}-read`);
+	this.read = read.checked;
 }
 
 function updateDisplay() {
